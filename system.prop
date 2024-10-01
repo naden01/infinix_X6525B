@@ -1,0 +1,16 @@
+# Fstab
+ro.postinstall.fstab.prefix=/system
+
+# USB MTP
+ro.sys.usb.storage.type=mtp
+
+# misc
+ro.adb.secure=0
+
+# MTK
+ro.vendor.mediatek.platform=MT6765
+ro.hardware=mt6765
+
+# Board
+ro.product.device=X6525B
+ro.build.product=X6525B
