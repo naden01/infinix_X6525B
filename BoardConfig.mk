@@ -164,10 +164,21 @@ TW_EXCLUDE_MTP := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_TZDATA := true
+TW_INCLUDE_NTFS_3G := true
+
+TW_PREPARE_DATA_MEDIA_EARLY := true
+# lptools
+TW_EXCLUDE_LPTOOLS := true
+RECOVERY_BINARY_SOURCE_FILES += \
+    $(TARGET_OUT_EXECUTABLES)/lptools
+TWRP_REQUIRED_MODULES += lptools
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# Prevent TWRP from unmounting /system
+TW_NEVER_UNMOUNT_SYSTEM := true
 
 # Version
 TW_DEVICE_VERSION := naze
