@@ -46,6 +46,12 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 320
 
+# System as root
+BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_ROOT_EXTRA_FOLDERS += metadata
+
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
@@ -130,8 +136,19 @@ TW_DEFAULT_BRIGHTNESS := 1200
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Crypto
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+BOARD_USES_METADATA_PARTITION := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+
+# Additional binaries & libraries needed for recovery
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
+    libpuresoftkeymasterdevice
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
 # Excludes
 TW_EXCLUDE_TWRPAPP := true
