@@ -8,3 +8,14 @@ ro.hardware=mt6765
 # Board
 ro.product.device=X6525B
 ro.build.product=X6525B
+
+# decrypt
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_microtrust_tee_support=1
+fbe.metadata.wrappedkey=true
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.hardware.kmsetkey=trustonic
+ro.hardware.gatekeeper=trustonic
+
+# Keymaster
+keymaster_ver=4.1
