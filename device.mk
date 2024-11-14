@@ -38,6 +38,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
+# manifest
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
