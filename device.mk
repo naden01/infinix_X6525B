@@ -38,7 +38,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
-# manifest
+# Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
 # Partitions
