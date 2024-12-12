@@ -41,6 +41,10 @@ PRODUCT_PACKAGES += \
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
