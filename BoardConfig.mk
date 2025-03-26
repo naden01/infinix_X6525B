@@ -126,7 +126,6 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
-TW_NO_SCREEN_BLANK := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_USES_MKE2FS := true # Use mke2fs to create ext4 images
 TW_INCLUDE_REPACKTOOLS := true
@@ -135,31 +134,20 @@ TW_INCLUDE_LIBRESETPROP := true
 TW_EXTRA_LANGUAGES := false
 TW_NO_FASTBOOT_BOOT := true
 
+# Display
+TW_NO_SCREEN_BLANK := true
+
 #brightness
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
+#TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_CRYPTO_FBE := true
 BOARD_USES_METADATA_PARTITION := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_FORCE_KEYMASTER_VER          := true
-
-# Additional binaries & libraries needed for recovery
-
-TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.keymaster@4.1 \
-    libkeymaster4 \
-    libkeymaster41 \
-    libpuresoftkeymasterdevice
-
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+#TW_INCLUDE_FBE_METADATA_DECRYPT := true
+#TW_FORCE_KEYMASTER_VER          := true
 
 # Excludes
 TW_EXCLUDE_TWRPAPP := true
@@ -173,11 +161,6 @@ TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_NTFS_3G := true
 
 TW_PREPARE_DATA_MEDIA_EARLY := true
-# lptools
-TW_EXCLUDE_LPTOOLS := true
-RECOVERY_BINARY_SOURCE_FILES += \
-    $(TARGET_OUT_EXECUTABLES)/lptools
-TWRP_REQUIRED_MODULES += lptools
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
