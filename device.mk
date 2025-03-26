@@ -41,16 +41,14 @@ PRODUCT_PACKAGES += \
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1
-
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 31
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
